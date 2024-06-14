@@ -1,1 +1,1 @@
-#dinamic portfolio creation
+# dinamic portfolio creation
