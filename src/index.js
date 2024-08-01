@@ -5,11 +5,9 @@ import express from 'express';
 
 const app = express();
 
-
-
 dotenv.config(
     {
-        path: './env'
+        path: './.env'
     })
 
 connectDB()
@@ -18,15 +16,9 @@ connectDB()
             console.log(`Server Is Running at Port : ${process.env.PORT}`)
         })
     })
-    .catch((err)=>{
+    .catch((err) => {
         console.log("Mongo Db Connection Failed !!!", err);
     })
-
-
-
-
-
-
 
 /*
 import express from "express"
