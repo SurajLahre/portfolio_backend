@@ -6,6 +6,7 @@ import { ApiResponse } from "../utils/ApiResponse.js";
 
 const registerUser = asyncHandler(async (req, res) => {
 
+
     //get user details from forntend
     //validation 
     //check if user already exists: user , email
@@ -16,11 +17,6 @@ const registerUser = asyncHandler(async (req, res) => {
     //check for user creation
     //return res
 
-    // const { fullName, email, username, password } = req.body
-    // console.log("email", email)
-    // res.status(200).json({
-    //     message: 'Hello i am working massage',
-    // })
     const { fullName, email, username, password } = req.body;
     console.log('fullName', fullName)
 
@@ -29,7 +25,7 @@ const registerUser = asyncHandler(async (req, res) => {
     ) {
         throw new ApiError(400, "All fields are required")
     }
-    const existedUser = User.findOne({
+    const existedUser = await User.findOne({
         $or: [{ username }, { email }]
     })
     if (existedUser) {

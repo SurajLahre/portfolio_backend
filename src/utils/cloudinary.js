@@ -17,11 +17,10 @@ const uploadOnClouinary = async (localFilePath) => {
         })
         //file has been uploaded successfull
         console.log("file is uploaded on cludinary", response.url);
-        return response
+        return response;
     } catch (error) {
-
         fs.unlinkSync(localFilePath)//remove the localy saved temporary file as the upload operation got failed
-        return null
+        return null;
     }
 }
 
